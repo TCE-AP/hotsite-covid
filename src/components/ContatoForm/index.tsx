@@ -32,8 +32,6 @@ const ContatoForm: React.FC = () => {
 
   async function handleSubmit(event: FormEvent): Promise<void> {
     event.preventDefault();
-
-    await api.post('points', formData);
   }
 
   return (

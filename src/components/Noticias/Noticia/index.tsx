@@ -29,10 +29,10 @@ const Noticia: React.FC<NoticiaDTO> = ({ titulo, imagem, conteudo, data }) => {
             </div>
           </div>
           <div className="mt-6 flex items-center">
-            <div className="flex text-sm leading-5 text-gray-500">
-              <div>{data}</div>
+            <div className="flex flex-wrap text-sm leading-5 text-gray-500 w-full">
+              <div className="mr-auto">{data}</div>
               <button
-                className="px-4 py-1 ml-auto rounded shadow-xs bg-gray-50 text-gray-400"
+                className="px-4 py-1 ml-auto rounded shadow-xs bg-gray-100 text-gray-500"
                 type="button"
                 onClick={() => toggle()}
               >
