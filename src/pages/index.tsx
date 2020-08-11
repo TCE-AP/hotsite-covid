@@ -451,7 +451,7 @@ const Home: React.FC = () => {
         <p className="text-base leading-6 text-blue-600 font-semibold tracking-wide uppercase">
           Transparência covid-19
         </p>
-        <div className="flex flex-wrap justify-center mt-4 items-center space-y-2">
+        <div className="flex flex-wrap justify-center mt-4 items-center space-y-2 space-x-10">
           <div className="w-full sm:w-1/4">
             <a
               href="https://covid.saude.gov.br"
