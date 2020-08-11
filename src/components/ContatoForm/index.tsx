@@ -37,7 +37,7 @@ const ContatoForm: React.FC = () => {
   }
 
   return (
-    <div className="max-w-lg mx-auto lg:max-w-none">
+    <div className="max-w-lg mx-auto lg:max-w-none pt-8 sm:pt-0">
       <Form
         ref={formRef}
         className="grid grid-cols-1 row-gap-6"
