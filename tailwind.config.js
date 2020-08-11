@@ -1,9 +1,10 @@
 /* eslint-disable global-require */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: {
+    enabled: true,
     content: ['./src/**/*.tsx'],
   },
   theme: {
@@ -31,4 +32,4 @@ module.exports = {
     require('@tailwindcss/custom-forms'),
     require('@tailwindcss/typography'),
   ],
-}
+};
