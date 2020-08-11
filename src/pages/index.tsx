@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 
-import { FiYoutube, FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
+import {
+  FiYoutube,
+  FiFacebook,
+  FiTwitter,
+  FiInstagram,
+  FiArrowUp,
+} from 'react-icons/fi';
 import { IconType } from 'react-icons/lib';
 import logoSimples from '../assets/logo-simples-sm.svg';
 import logoComTexto from '../assets/logo-com-texto.svg';
 import Transition from '../components/General/Transition';
 import ContatoForm from '../components/ContatoForm';
+import Noticias from '../components/Noticias';
 
 interface SocialLinks {
   icon: IconType | any;
@@ -69,7 +76,7 @@ const menuLinks: MenuLinkItem[] = [
     link: '/#acoes',
   },
   {
-    nome: 'Legislação',
+    nome: 'Legislações',
     link: '/#legislacao',
   },
   {
@@ -148,7 +155,7 @@ const Home: React.FC = () => {
                     <a
                       key={item.nome}
                       href={item.link}
-                      className="font-medium mr-8 text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
+                      className="font-medium mr-8 text-gray-500 hover:text-blue-primary transition duration-150 ease-in-out"
                     >
                       {item.nome}
                     </a>
@@ -165,7 +172,7 @@ const Home: React.FC = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+              <div className="fixed top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
                 <div className="rounded-lg shadow-md">
                   <div
                     className="rounded-lg bg-white shadow-xs overflow-hidden"
@@ -209,7 +216,7 @@ const Home: React.FC = () => {
                         <a
                           key={item.nome}
                           href={item.link}
-                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-primary focus:outline-none focus:text-white focus:bg-blue-primary transition duration-150 ease-in-out"
                           role="menuitem"
                         >
                           {item.nome}
@@ -224,7 +231,7 @@ const Home: React.FC = () => {
               <div className="sm:text-center lg:text-left">
                 <h1 className="text-4xl tracking-tight leading-10 font-extrabold text-blue-primary sm:text-5xl sm:leading-none md:text-6xl">
                   TCE-AP
-                  <span className="text-gray-700"> contra o</span>
+                  <span className="text-gray-700"> contra o </span>
                   <br className="xl:hidden" />
                   <span className="text-gray-700">Coronavírus</span>
                 </h1>
@@ -252,117 +259,13 @@ const Home: React.FC = () => {
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="/images/fachada.jpg"
-            alt="Fachada do Tribunal"
+            src="/images/background.jpg"
+            alt="TCE Contra o Coronavírus"
           />
         </div>
       </div>
-      <div
-        id="acoes"
-        className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8"
-      >
-        <div className="absolute inset-0">
-          <div className="bg-white h-1/3 sm:h-2/3" />
-        </div>
-        <div className="relative max-w-7xl mx-auto">
-          <div className="text-center">
-            <h2 className="text-3xl leading-9 tracking-tight font-extrabold text-blue-primary sm:text-4xl sm:leading-10">
-              Nossas Ações
-            </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-              libero labore natus atque, ducimus sed.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-            <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-              <div className="flex-shrink-0">
-                <img
-                  className="h-48 w-full object-cover"
-                  src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
-                  alt=""
-                />
-              </div>
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-                <div className="flex-1">
-                  <a href="#" className="block">
-                    <h3 className="mt-2 text-xl leading-7 font-semibold text-blue-primary">
-                      Doações de Sextas Básicas
-                    </h3>
-                    <p className="mt-3 text-base leading-6 text-gray-500">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Architecto accusantium praesentium eius, ut atque fuga
-                      culpa, similique sequi cum eos quis dolorum.
-                    </p>
-                  </a>
-                </div>
-                <div className="mt-6 flex items-center">
-                  <div className="flex text-sm leading-5 text-gray-500">
-                    <time dateTime="2020-03-16">01 de Agosto de 2020</time>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-              <div className="flex-shrink-0">
-                <img
-                  className="h-48 w-full object-cover"
-                  src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
-                  alt=""
-                />
-              </div>
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-                <div className="flex-1">
-                  <a href="#" className="block">
-                    <h3 className="mt-2 text-xl leading-7 font-semibold text-blue-primary">
-                      Mingau Solidário
-                    </h3>
-                    <p className="mt-3 text-base leading-6 text-gray-500">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Velit facilis asperiores porro quaerat doloribus, eveniet
-                      dolore. Adipisci tempora aut inventore optio animi.,
-                      tempore temporibus quo laudantium.
-                    </p>
-                  </a>
-                </div>
-                <div className="mt-6 flex items-center">
-                  <div className="flex text-sm leading-5 text-gray-500">
-                    <time dateTime="2020-03-16">01 de Agosto de 2020</time>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-              <div className="flex-shrink-0">
-                <img
-                  className="h-48 w-full object-cover"
-                  src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
-                  alt=""
-                />
-              </div>
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-                <div className="flex-1">
-                  <a href="#" className="block">
-                    <h3 className="mt-2 text-xl leading-7 font-semibold text-blue-primary">
-                      Outro Evento
-                    </h3>
-                    <p className="mt-3 text-base leading-6 text-gray-500">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Sint harum rerum voluptatem quo recusandae magni placeat
-                      saepe molestiae, sed excepturi cumque corporis perferendis
-                      hic.
-                    </p>
-                  </a>
-                </div>
-                <div className="mt-6 flex items-center">
-                  <div className="flex text-sm leading-5 text-gray-500">
-                    <time dateTime="2020-03-16">01 de Agosto de 2020</time>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id="acoes">
+        <Noticias />
       </div>
       <div id="orientacoes" className="py-12 bg-white">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -384,24 +287,15 @@ const Home: React.FC = () => {
               <li>
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-apoio text-white">
-                      <svg
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                        />
-                      </svg>
+                    <div className="flex items-center justify-center h-28 w-2h-28">
+                      <img
+                        src="/images/fique-em-casa.png"
+                        alt="Homem sentado no sofá de sua casa"
+                      />
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg leading-6 font-medium text-gray-900">
+                    <h4 className="text-lg leading-6 font-medium text-blue-primary">
                       Fique em Casa
                     </h4>
                     <p className="mt-2 text-base leading-6 text-gray-500">
@@ -415,24 +309,15 @@ const Home: React.FC = () => {
               <li className="mt-10 md:mt-0">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-apoio text-white">
-                      <svg
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
-                        />
-                      </svg>
+                    <div className="flex items-center justify-center h-28 w-2h-28">
+                      <img
+                        src="/images/use-mascara.png"
+                        alt="Mulher usando máscara"
+                      />
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg leading-6 font-medium text-gray-900">
+                    <h4 className="text-lg leading-6 font-medium text-blue-primary">
                       Use Máscara
                     </h4>
                     <p className="mt-2 text-base leading-6 text-gray-500">
@@ -446,24 +331,15 @@ const Home: React.FC = () => {
               <li className="mt-10 md:mt-0">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-apoio text-white">
-                      <svg
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M13 10V3L4 14h7v7l9-11h-7z"
-                        />
-                      </svg>
+                    <div className="flex items-center justify-center h-28 w-2h-28">
+                      <img
+                        src="/images/mantenha-distancia.png"
+                        alt="Duas pessoas distantes"
+                      />
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg leading-6 font-medium text-gray-900">
+                    <h4 className="text-lg leading-6 font-medium text-blue-primary">
                       Mantenha distância
                     </h4>
                     <p className="mt-2 text-base leading-6 text-gray-500">
@@ -477,24 +353,15 @@ const Home: React.FC = () => {
               <li className="mt-10 md:mt-0">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-apoio text-white">
-                      <svg
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                        />
-                      </svg>
+                    <div className="flex items-center justify-center h-28 w-2h-28">
+                      <img
+                        src="/images/higienize-se.png"
+                        alt="Recipiente com produto de limpeza"
+                      />
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg leading-6 font-medium text-gray-900">
+                    <h4 className="text-lg leading-6 font-medium text-blue-primary">
                       Higienize-se
                     </h4>
                     <p className="mt-2 text-base leading-6 text-gray-500">
@@ -509,7 +376,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-
       <div id="contato" className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8">
@@ -578,7 +444,53 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-
+      <div className="container mx-auto text-center">
+        <h2 className="text-2xl leading-8 font-extrabold text-blue-primary sm:text-3xl sm:leading-9">
+          Links Úteis
+        </h2>
+        <p className="text-base leading-6 text-blue-600 font-semibold tracking-wide uppercase">
+          Transparência covid-19
+        </p>
+        <div className="flex flex-wrap justify-center mt-4 items-center space-y-2">
+          <div className="w-full sm:w-1/4">
+            <a
+              href="https://covid.saude.gov.br"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                src="/images/links-uteis/corona-br.png"
+                alt="Logomarca do Brasil"
+              />
+            </a>
+          </div>
+          <div className="w-full sm:w-1/4">
+            <a
+              href="http://www.transparencia.ap.gov.br/consulta/2/495/despesas/covid-19 "
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                src="/images/links-uteis/corona-ap.png"
+                className=""
+                alt="Logomarca do Estado do Amapá"
+              />
+            </a>
+          </div>
+          <div className="w-full sm:w-1/4">
+            <a
+              href="https://macapa.ap.gov.br/coronavirus"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                src="/images/links-uteis/corona-mcp.png"
+                alt="Logomarca da Cidade de Macapá"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
       <div className="bg-white">
         <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
           <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
@@ -615,6 +527,12 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
+      <a
+        href="#inicio"
+        className="fixed right-0 bottom-0 mr-2 sm:mr-10 mb-5 p-4 rounded-full transition duration-200 text-blue-primary hover:text-blue-apoio bg-white shadow-lg"
+      >
+        <FiArrowUp className="animate-bounce stroke-current" size={18} />
+      </a>
     </>
   );
 };
