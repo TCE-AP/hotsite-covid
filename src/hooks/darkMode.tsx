@@ -1,4 +1,10 @@
-import React, { createContext, useState, useCallback, useContext, useEffect } from 'react';
+import React, {
+  createContext,
+  useState,
+  useCallback,
+  useContext,
+  useEffect,
+} from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
 
 interface DarkModeContextData {
@@ -6,7 +12,9 @@ interface DarkModeContextData {
   toggleDarkMode(): void;
 }
 
-const DarkModeContext = createContext<DarkModeContextData>({} as DarkModeContextData);
+const DarkModeContext = createContext<DarkModeContextData>(
+  {} as DarkModeContextData,
+);
 
 export const DarkModeProvider: React.FC = ({ children }) => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -39,7 +47,9 @@ export const DarkModeProvider: React.FC = ({ children }) => {
         toggleDarkMode,
       }}
     >
-      <div className={darkMode === 'on' ? 'bg-black-apoio' : 'bg-white'}>{children}</div>
+      <div className={darkMode === 'on' ? 'bg-black-apoio' : 'bg-white'}>
+        {children}
+      </div>
     </DarkModeContext.Provider>
   );
 };

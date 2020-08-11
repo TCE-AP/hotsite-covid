@@ -8,7 +8,9 @@ interface FontSizeContextData {
   normalizeFontSize(): void;
 }
 
-const FontSizeContext = createContext<FontSizeContextData>({} as FontSizeContextData);
+const FontSizeContext = createContext<FontSizeContextData>(
+  {} as FontSizeContextData,
+);
 
 export const FontSizeProvider: React.FC = ({ children }) => {
   const [fontSize, setFontSize] = useState(1);
